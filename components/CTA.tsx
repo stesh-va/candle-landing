@@ -4,66 +4,39 @@ export default function CTA() {
   const { cta } = siteContent;
 
   return (
-    <section
-      id="cta"
-      style={{
-        padding: "70px 20px",
-        background: "#111",
-        color: "#fff",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-      >
-        <h2 style={{ fontSize: "36px", marginBottom: "16px" }}>{cta.title}</h2>
-        <p
-          style={{
-            fontSize: "18px",
-            lineHeight: 1.6,
-            maxWidth: "700px",
-            margin: "0 auto 24px",
-          }}
-        >
-          {cta.text}
-        </p>
+    <section id="cta" className="cta-section">
+      <div className="cta-container">
+        <div className="cta-box">
+          <div className="cta-content">
+            <div className="cta-badge">Связаться</div>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <a
-            href={cta.telegramLink}
-            style={{
-              textDecoration: "none",
-              background: "#fff",
-              color: "#111",
-              padding: "12px 18px",
-              borderRadius: "10px",
-            }}
-          >
-            Telegram
-          </a>
+            <h2 className="cta-title">Подберем свечу под ваше намерение</h2>
 
-          <a
-            href={cta.whatsappLink}
-            style={{
-              textDecoration: "none",
-              background: "#fff",
-              color: "#111",
-              padding: "12px 18px",
-              borderRadius: "10px",
-            }}
-          >
-            WhatsApp
-          </a>
+            <p className="cta-text">
+              Напишите нам в Telegram или WhatsApp. Мы поможем выбрать свечу и
+              ответим на любые вопросы.
+            </p>
+
+            <div className="cta-buttons">
+              <a
+                href={cta.telegramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button-primary"
+              >
+                Написать в Telegram
+              </a>
+
+              <a
+                href={cta.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button-secondary"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

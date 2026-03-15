@@ -1,7 +1,7 @@
 import { siteContent } from "@/content/site";
 
 export default function Products() {
-  const { products } = siteContent;
+  const { products, cta } = siteContent;
 
   return (
     <section id="products" className="products-section">
@@ -33,7 +33,7 @@ export default function Products() {
 
               <div className="product-card-body">
                 <div className="product-card-top">
-                  {"tag" in item && (
+                  {"tag" in item && item.tag && (
                     <div className="product-tag">{item.tag}</div>
                   )}
 
@@ -44,9 +44,25 @@ export default function Products() {
 
                 <p className="product-description">{item.description}</p>
 
-                <a href="#cta" className="product-button">
-                  Оставить заявку
-                </a>
+                <div className="product-buttons">
+                  <a
+                    href={cta.telegramLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="product-button"
+                  >
+                    Telegram
+                  </a>
+
+                  <a
+                    href={cta.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="product-button product-button-secondary"
+                  >
+                    WhatsApp
+                  </a>
+                </div>
               </div>
             </article>
           ))}

@@ -572,6 +572,33 @@ a {
   box-shadow: 0 12px 24px rgba(158, 114, 107, 0.16);
 }
 
+.product-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.product-buttons .product-button {
+  flex: 1;
+}
+
+.product-button-secondary {
+  background: transparent;
+  color: #281f15;
+  border: 1px solid #c8aca7;
+  box-shadow: none;
+}
+
+.product-button-secondary:hover {
+  background: #f7f5f2;
+}
+
+@media (max-width: 768px) {
+  .product-buttons {
+    flex-direction: column;
+  }
+}
+
 .product-gallery::-webkit-scrollbar {
   height: 8px;
 }
@@ -668,5 +695,107 @@ a {
 
   .products-badge {
     font-size: 13px;
+  }
+}
+
+.cta-section {
+  padding: 90px 20px;
+  background: #f7f5f2;
+}
+
+.cta-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.cta-box {
+  background: #e1d6cc;
+  border-radius: 28px;
+  padding: 60px 40px;
+  border: 1px solid rgba(40, 31, 21, 0.08);
+}
+
+.cta-content {
+  max-width: 640px;
+}
+
+.cta-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #f7f5f2;
+  font-size: 14px;
+  color: #281f15;
+}
+
+.cta-title {
+  margin: 0 0 16px;
+  font-size: 40px;
+  line-height: 1.15;
+  color: #281f15;
+  letter-spacing: -0.02em;
+}
+
+.cta-text {
+  margin: 0 0 28px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(40, 31, 21, 0.8);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cta-button-primary {
+  display: inline-block;
+  text-decoration: none;
+  background: #9e726b;
+  color: #f7f5f2;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cta-button-secondary {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid #9e726b;
+  color: #281f15;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 60px 16px;
+  }
+
+  .cta-box {
+    padding: 40px 24px;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-button-primary,
+  .cta-button-secondary {
+    width: 100%;
+    text-align: center;
   }
 }

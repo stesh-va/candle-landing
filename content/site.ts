@@ -116,8 +116,9 @@ export const siteContent = {
   cta: {
     title: "Оставить заявку",
     text: "Напишите нам в Telegram или WhatsApp, и мы поможем подобрать подходящую свечу.",
-    telegramLink: "https://t.me/yourname",
-    whatsappLink: "https://wa.me/0000000000",
+    telegramLink: "https://t.me/SteshVA",
+    whatsappLink:
+      "https://wa.me/79817500677?text=Здравствуйте!%20Хочу%20узнать%20про%20свечи",
   },
 
   footer: {
