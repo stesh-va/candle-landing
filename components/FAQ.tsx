@@ -4,24 +4,22 @@ export default function FAQ() {
   const { faq } = siteContent;
 
   return (
-    <section id="faq" style={{ padding: "60px 20px" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "24px" }}>{faq.title}</h2>
+    <section id="faq" className="faq-section">
+      <div className="faq-container">
+        <div className="faq-heading">
+          <div className="faq-badge">FAQ</div>
 
-        <div style={{ display: "grid", gap: "16px" }}>
+          <h2 className="faq-title">{faq.title}</h2>
+
+          {"subtitle" in faq && <p className="faq-subtitle">{faq.subtitle}</p>}
+        </div>
+
+        <div className="faq-grid">
           {faq.items.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                border: "1px solid #eee",
-                borderRadius: "14px",
-                padding: "20px",
-                background: "#fff",
-              }}
-            >
-              <h3 style={{ marginBottom: "10px" }}>{item.question}</h3>
-              <p style={{ lineHeight: 1.6, color: "#444" }}>{item.answer}</p>
-            </div>
+            <article key={index} className="faq-card">
+              <h3 className="faq-question">{item.question}</h3>
+              <p className="faq-answer">{item.answer}</p>
+            </article>
           ))}
         </div>
       </div>

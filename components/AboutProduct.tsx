@@ -4,21 +4,30 @@ export default function AboutProduct() {
   const { about } = siteContent;
 
   return (
-    <section id="about" style={{ padding: "60px 20px", background: "#faf7f2" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "18px" }}>
-          {about.title}
-        </h2>
-        <p
-          style={{
-            fontSize: "18px",
-            lineHeight: 1.7,
-            maxWidth: "850px",
-            color: "#333",
-          }}
-        >
-          {about.text}
-        </p>
+    <section id="about" className="about-section">
+      <div className="about-container">
+        <div className="about-grid">
+          <div className="about-content">
+            <div className="about-badge">О продукте</div>
+
+            <h2 className="about-title">{about.title}</h2>
+
+            <p className="about-text">{about.text}</p>
+          </div>
+
+          <div className="about-side-card">
+            <div className="about-side-label">Мягкий формат</div>
+
+            <div className="about-points">
+              {about.points.map((point, index) => (
+                <div key={index} className="about-point">
+                  <span className="about-point-dot" />
+                  <span>{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

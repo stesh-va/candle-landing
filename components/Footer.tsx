@@ -1,16 +1,12 @@
 import { siteContent } from "@/content/site";
 
 export default function Footer() {
+  const { footer } = siteContent;
+
   return (
-    <footer
-      style={{
-        padding: "24px 20px",
-        borderTop: "1px solid #eee",
-        background: "#fff",
-      }}
-    >
-      <div style={{ maxWidth: "1100px", margin: "0 auto", color: "#666" }}>
-        {siteContent.footer.text}
+    <footer className="footer-section">
+      <div className="footer-container">
+        <div className="footer-text">{footer.text}</div>
       </div>
     </footer>
   );

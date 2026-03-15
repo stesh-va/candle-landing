@@ -4,34 +4,27 @@ export default function Testimonials() {
   const { testimonials } = siteContent;
 
   return (
-    <section style={{ padding: "60px 20px", background: "#fafafa" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "24px" }}>
-          {testimonials.title}
-        </h2>
+    <section className="testimonials-section">
+      <div className="testimonials-container">
+        <div className="testimonials-heading">
+          <div className="testimonials-badge">Отзывы</div>
 
-        <div
-          style={{
-            display: "grid",
-            gap: "16px",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          }}
-        >
+          <h2 className="testimonials-title">{testimonials.title}</h2>
+
+          {"subtitle" in testimonials && (
+            <p className="testimonials-subtitle">{testimonials.subtitle}</p>
+          )}
+        </div>
+
+        <div className="testimonials-grid">
           {testimonials.items.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                border: "1px solid #eee",
-                borderRadius: "14px",
-                padding: "20px",
-                background: "#fff",
-              }}
-            >
-              <p style={{ lineHeight: 1.6, marginBottom: "12px" }}>
-                {item.text}
-              </p>
-              <strong>{item.name}</strong>
-            </div>
+            <article key={index} className="testimonial-card">
+              <div className="testimonial-quote">“</div>
+
+              <p className="testimonial-text">{item.text}</p>
+
+              <div className="testimonial-author">{item.name}</div>
+            </article>
           ))}
         </div>
       </div>

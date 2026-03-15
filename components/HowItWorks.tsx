@@ -1,17 +1,33 @@
-export default function HowItWorks() {
-  return (
-    <section style={{ padding: "60px 20px", background: "#fcfcfc" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "24px" }}>
-          Как это работает
-        </h2>
+import { siteContent } from "@/content/site";
 
-        <ol style={{ paddingLeft: "20px", lineHeight: 1.9, fontSize: "18px" }}>
-          <li>Вы выбираете подходящую свечу или пишете нам свой запрос</li>
-          <li>Мы помогаем подобрать вариант</li>
-          <li>Вы получаете свечу и рекомендации по использованию</li>
-          <li>Проводите свой личный ритуал в комфортной атмосфере</li>
-        </ol>
+export default function HowItWorks() {
+  const { howItWorks } = siteContent;
+
+  return (
+    <section className="how-section">
+      <div className="how-container">
+        <div className="how-heading">
+          <div className="how-badge">Как это работает</div>
+
+          <h2 className="how-title">{howItWorks.title}</h2>
+
+          {"subtitle" in howItWorks && (
+            <p className="how-subtitle">{howItWorks.subtitle}</p>
+          )}
+        </div>
+
+        <div className="how-grid">
+          {howItWorks.steps.map((step, index) => (
+            <article key={index} className="how-card">
+              <div className="how-card-header">
+                <div className="how-number">{step.number}</div>
+                <h3 className="how-card-title">{step.title}</h3>
+              </div>
+
+              <p className="how-card-text">{step.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
